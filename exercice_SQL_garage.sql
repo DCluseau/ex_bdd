@@ -40,3 +40,29 @@ CREATE DATABASE IF NOT EXISTS garage;
 	SELECT reference, marque_article, energie
 	FROM ARTICLE
 	INNER JOIN VOITURE ON ARTICLE.article_id = VOITURE.fk_article_id;
+
+	INSERT INTO ARTICLE (article_id, reference, designation, marque_article, quantite)
+	VALUES (NULL,'7CK215G', 'Filtre à air', 'MAN FILTER', 3),
+	(NULL,'Q9DREJ6', 'Filtre à pollen', 'BOSCH', 666);
+
+	SELECT reference, marque_article, energie
+	FROM ARTICLE
+	LEFT JOIN VOITURE ON ARTICLE.article_id = VOITURE.fk_article_id;
+
+	SELECT reference, marque_article, energie
+	FROM ARTICLE
+	RIGHT JOIN VOITURE ON ARTICLE.article_id = VOITURE.fk_article_id;
+
+	SELECT reference, designation, quantite, marque_article, type
+	FROM ARTICLE
+	INNER JOIN VOITURE ON ARTICLE.article_id = VOITURE.fk_article_id
+	WHERE reference = '7CK215G';
+
+	SELECT reference, designation, marque_article, type
+	FROM ARTICLE
+	INNER JOIN VOITURE ON ARTICLE.article_id = VOITURE.fk_article_id
+	GROUP BY reference
+
+	UPDATE ARTICLE
+	SET quantite = 1
+	WHERE article_id = 1;

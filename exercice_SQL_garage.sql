@@ -36,3 +36,7 @@ CREATE DATABASE IF NOT EXISTS garage;
 	(NULL,'CITROEN', 'C3', 'ESSENCE', 6),
 	(NULL,'PEUGEOT', '308', 'DIESEL', 7),
 	(NULL,'MERCEDES', 'A180', 'DIESEL', 8);
+
+	SELECT reference, marque_article, energie
+	FROM ARTICLE
+	INNER JOIN VOITURE ON ARTICLE.article_id = VOITURE.fk_article_id;
